@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Task Manager</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link type="text/css" rel="stylesheet" href="style.css">
+</head>
+<body>	
+	<main class="container text-center heading-top">		
+		<h1 class="display-5 fw-bold">Task Manager</h1>
+		<div class="col-lg-6 mx-auto">
+		    <p class="lead mb-4 margin-bottom">
+				Enter the Task details, then click 'Save'
+			</p>		
+		 	<main>
+				<div> 
+					<form action="#" th:action="@{/updateTask/} + ${task.taskId}" th:object="${task}" method="post">          
+						<div class="form-group"> 
+						    <label for="assigneeId" class="padding-bottom">Assignee Id</label>				    
+						    <input type="text" class="form-control" th:field="*{assignee.assigneeId}" name="assigneeId" id="assigneeId">				    
+				  		</div>
+			  			<div class="form-group">
+						    <label for="description" class="padding-bottom">Description</label>				    
+						    <input type="text" class="form-control" th:field="*{description}" name="description" id="description">				    
+			  			</div>
+			  			<div class="form-group">
+						    <label for="createdDate" class="padding-bottom">Created Date</label>				    
+						    <input type="date" class="form-control" th:field="*{createdDate}" name="createdDate" id="createdDate">				    
+			  			</div>
+			   			<div class="form-group">
+						    <label for="dueDate" class="padding-bottom">Due Date</label>				    
+						    <input type="date" class="form-control" th:field="*{dueDate}" name="dueDate" id="dueDate">				    
+			  			</div>
+			  			<div class="form-group">
+						    <label for="completedDate" class="padding-bottom">Completed Date</label>				    
+						    <input type="date" class="form-control" th:field="*{completedDate}" name="completedDate" id="completedDate">				    
+			  			</div>					
+						<button type="submit" class="btn btn-primary margin-top">Save</button>
+					</form>
+				</div>     
+ 			</main>
+		</div>
+	</main>	
+</body>
+</html>
