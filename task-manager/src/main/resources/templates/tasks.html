@@ -40,8 +40,8 @@
 	        <td th:text="${task.assignee.name}"></td>
 	        <td th:text="${task.assignee.email}"></td>
 			<td>
-			   	<span><a th:href="@{/delete/} + ${task.taskId}" class="btn btn-secondary margin-bottom">Delete</a></span>
-	    		<span><a th:href="@{/edit/} + ${task.taskId}" class="btn btn-secondary">Update</a></span>        	
+				<span><a th:href="@{/edit/} + ${task.taskId}" class="btn btn-secondary">Update</a></span>
+			   	<span><a th:href="@{/delete/} + ${task.taskId}" class="btn btn-secondary margin-bottom">Delete</a></span>	    		        	
 	    	</td>       
 	    </tr>
 	</table>
