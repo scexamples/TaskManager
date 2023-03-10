@@ -174,7 +174,7 @@ public class TaskManagerController {
 			task.setDescription(formData.getFirst("description"));
 		}
 			
-		String assigneeIdString = formData.getFirst("assignee.assigneeId");
+		String assigneeIdString = formData.getFirst("assigneeId");
 		if(!StringUtils.isBlank(assigneeIdString)) {
 			int assigneeId = Integer.parseInt(assigneeIdString);
 			Optional<Assignee> optAssignee = assigneeRepository.findByAssigneeId(assigneeId);		
