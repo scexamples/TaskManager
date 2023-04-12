@@ -28,7 +28,7 @@ public class Assignee {
 	 @Email(message = "Email should be valid")
 	 private String email;
 
-	 @OneToMany(mappedBy = "taskId", cascade = CascadeType.ALL, orphanRemoval = false)
+	 @OneToMany(mappedBy = "assignee", cascade = CascadeType.ALL, orphanRemoval = false)
 	 private List<Task> tasks;
  
 	public Assignee() {
